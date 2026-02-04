@@ -1,7 +1,7 @@
 # Mini Projet PHP - Système de Gestion des Utilisateurs
 
-**Étudiant:** L2GLS3030226  
-**Date:** 03 Février 2026  
+**Étudiant:** HAOUA MAMADOU NDIONE
+**Date:** 04 Février 2026  
 **Template:** SB Admin Bootstrap 5
 
 ## 📋 Description
