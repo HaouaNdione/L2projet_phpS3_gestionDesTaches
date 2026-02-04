@@ -166,4 +166,4 @@ Projet académique - L2 GL S3 - 2026
 
 ## 👨‍💻 Auteur
 
-**L2GLS3030226** - Mini Projet PHP
+**HAOUA MAMADOU NDIONE** - Mini Projet PHP
