@@ -1,0 +1,87 @@
+indexUser.php: 
+<h1 class="text-center mb-4">Gestion Utilisateur</h1>
+
+        <!-- ==== FORMULAIRE AJOUT / MODIFICATION ==== -->
+        <div class="card mb-4 col-md-6 offset-3">
+            <div class="card-header bg-primary text-white">
+                <?= $Utilisateur_a_modifier ? "Modifier un utilisateur" : "Ajouter un utilisateur" ?>
+            </div>
+
+            <div class="card-body">
+                <form method="POST" action="http://localhost/projettache2/traitements/action.php">
+
+                    <input type="hidden" name="action" value="<?= $Utilisateur_a_modifier ? "modifier" : "ajouter" ?>">
+
+                    <?php if ($Utilisateur_a_modifier): ?>
+                        <input type="hidden" name="id" value="<?= $Utilisateur_a_modifier['id'] ?>">
+                    <?php endif; ?>
+
+                    <div class="mb-3">
+                        <label class="form-label">Prenom</label>
+                        <input type="text" class="form-control" name="prenom" required
+                            value="<?= $Utilisateur_a_modifier['prenom'] ?? '' ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nom</label>
+                        <input type="text" class="form-control" name="nom" required
+                            value="<?= $Utilisateur_a_modifier['nom'] ?? '' ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Login</label>
+                        <input type="text" class="form-control" name="login" required
+                            value="<?= $Utilisateur_a_modifier['login'] ?? '' ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select name="role" id="" class="form-control">
+                            <option value="admin">Admin</option>
+                            <option value="simple user">Simple User</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="text" class="form-control" name="password" required
+                            value="<?= $Utilisateur_a_modifier['password'] ?? '' ?>">
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <?= $Utilisateur_a_modifier ? "Enregistrer les modifications" : "Ajouter" ?>
+                    </button>
+
+                    <?php if ($Utilisateur_a_modifier): ?>
+                        <a href="index.php" class="btn btn-secondary">Annuler</a>
+                    <?php endif; ?>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- ==== LISTE DES UTILISATEURS ==== -->
+        <h2 class="mb-3">Liste des Utilisateurs</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Login</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+            <?php foreach ($Utilisateurs as $u): ?>
+             <tr>
+                <td></td>
+                <td><?= $u["prenom"] ?></td>
+                <td><?= $u["nom"] ?></td>
+                <td><?= $u["login"] ?></td>
+                <td><?= $u["role"] ?></td>
+                <td>
+                    <a href="" class="btn btn-sm btn-warning">Modifier</a>
+                    <a href="" class="btn btn-sm btn-danger">Supprimer</a>
+                </td>
+                
+             </tr>
+            <?php endforeach; ?>
+       
+        </table>
+
+
+https://startbootstrap.com/template/sb-admin
